@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Daniel's Resume Site</title>
+        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">
+                <span class="d-block d-lg-none">Daniel Zapata</span>
+                <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="assets/img/profile.jpg" alt="..." /></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education">Education</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#interests">Interests</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#awards">Awards</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!-- Page Content-->
+        <div class="container-fluid p-0">
+            <!-- About-->
+            <section class="resume-section" id="about">
+                <div class="resume-section-content">
+                    <h1 class="mb-0">
+                        Daniel
+                        <span class="text-primary">Zapata</span>
+                    </h1>
+                    <div class="subheading mb-5">
+                        · Celebration, FL ·
+                    </div>
+                    <p class="lead mb-5"> I am an aspiring Cloud Engineer with 7 years of IT industry experience. Through my experiences, I've been able to provide exceptional service to clients and partners with Identity and Access management, Systems Administration, and Data Center Support.</p>
+                    <div class="social-icons">
+                        <a class="social-icon" href="https://www.linkedin.com/in/danielozapata"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="social-icon" href="https://github.com/atapazD"><i class="fab fa-github"></i></a>
+                    </div>
+                    <h3>
+                        <p>Site Visitors:<span id="replaceme" /></p>
+                        <script> 
+                            fetch('https://9f2hf57oh0.execute-api.us-east-1.amazonaws.com/testView/view', {
+                                method: 'POST',
+                                headers: {
+                                    'Accept': 'application/json',
+                                    'Content-Type': 'application/json'
+                                },
+                                body: JSON.stringify({
+                                    "count": 1
+                                })
+                            })
+                                .then(response => response.json())
+                                .then((data) => { document.getElementById('replaceme').innerText = data.body })
+                                .catch((error) => {
+                                    console.error('Error:', error);
+                                }
+                            )
+                        </script>
+                    </h3>
+                    
+                </div>
+            </section>
+            
+            
+            <hr class="m-0" />
+            <!-- Experience-->
+            <section class="resume-section" id="experience">
+                <div class="resume-section-content">
+                    <h2 class="mb-5">Experience</h2>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">Tier 3 Application Analyst</h3>
+                            <div class="subheading mb-3">Leidos</div>
+                            <p>•   Provide Tier 3 ticket triage and analysis for Defense Healthcare Management System Modernization project using BMC Remedy ticket management.</p>
+                            <p>•   Supporting functions to include evaluating, processing/resolving, and tracking of all Tier 3 Incidents.</p>
+                            <p>•   Monitor DHA trouble ticketing system queues, entering and managing software problem incidents.</p>
+                            <p>•   Identify incident information to ensure information is complete and accurate to eliminate risk of PHI and confidential information leak.</p>  
+                            <p>•   Communicate and collaborate with multiple external organizations regarding the resolution of issues.</p>
+                            <p>•	Analyze verified Incidents and facilitate timely and appropriate processing of the issue.</p>
+                            <p>•	Providing analysis and reporting of valid defects and creating associations between them.</p>
+                            <p>•	Provide detailed trend analysis and reporting of triaged and resolution activities.</p>
+                            <p>•	Identity and Access management via Active directory, Dentrix, HNA, PPR, ePrescribe, and other utilities.</p>
+                            <p>•	Write and Develop Standards of Procedures and updating documentation of Ticket Triage and Access Management for Accounts.</p>
+                            <p>•	Assist in the education of new staff and providing feedback on processes improvements.</p>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">December 2019 - Present</span></div>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">Data Center Technician</h3>
+                            <div class="subheading mb-3">SCOM - Amazon</div>
+                            <p>•	Installed new racks, servers, network devices and performed configuration.</p>
+                            <p>•	Installed and updated hardware/firmware of all internal components including processor, ram, motherboard, PSU, SSD, HDD, SGPU.</p>
+                            <p>•	Maintained and updated asset inventory of components and hardware devices.</p>
+                            <p>•	Assisted in Degaussing and Shredding of HDD in the Amazon S3 project.</p>
+                            <p>•	Partook in process improvements to better identify fault issues in S3 project.</p>
+                            <p>•	Achieved a daily closure rate of 32 tickets weekly.</p>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">October 2019 - December 2019</span></div>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">Tier 2 Support</h3>
+                            <div class="subheading mb-3">Systems Integration Development - United States Geological Survey</div>
+                            <p>•	Provide technical assistance to the end-user on hardware, software issues, onsite and remote with a 95% satisfaction rate using BMC Remedy ticket management.</p>
+                            <p>•	Install and manage desktop/laptop operating systems (Win XP, Win 7, Win 8, Win 10), and software for all equipment.</p>
+                            <p>•	Performed machine encryption, decryption, token recovery/reset, and enforce policies to ensure endpoint security using McAfee ePO and Drive Encryption.</p> 
+                            <p>•	Sanitized machines using Clonezilla imaging.</p>
+                            <p>•	Manual Static IP configuration through DHCP/IPcontrol for new and existing hosts using Server Manager.</p>
+                            <p>•	Active Directory management, including host creation, account unlocks/resets, and removal of hosts.</p>
+                            <p>•	Writing /Creating configurations/SOP’s for assisting other techs and users in imaging or troubleshooting.</p> 
+                            <p>•	Update virus definitions on inactive endpoints using Symantec Endpoint Protection.</p>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">January 2018 - October 2019</span></div>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">System Administration</h3>
+                            <div class="subheading mb-3">Verizon Wireless</div>
+                            <p>•	Achieved and maintained ticket completion and user requests to less than a business day using ServiceNow.</p>
+                            <p>•	Achieved 5/5 service level score monthly.</p>
+                            <p>•	Received recognition from retail managers and directors for pro-active maintenance during busiest seasons.</p>
+                            <p>•	Volunteered for emergency work with Verizon Landline installing fiber and troubleshooting RF signals.</p>
+                            <p>•	Racked Cisco switches, Routers, and WAP, VoIP phone deployment.</p>
+                            <p>•	Conducted Mobile POS Verifone configuration and hardware support.</p>
+                            <p>•	Conducted PC refresh deployment, replacing end of life equipment (PC, Lan, Voice) to meet security posture.</p>
+                            <p>•	Provided maintenance and troubleshooting of desktops, laptops, handheld devices and tablets using MDM services.</p>
+                            <p>•	Scheduled Images remotely using PXE servers.</p> 
+                            <p>•	Conducted New Hire on-boarding equipment deployment and VPN configuration.</p>
+                            <p>•	Performed user profile management and equipment tracking with Active directory.</p>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">October 2014 - January 2018</span></div>
+                    </div>
+                </div>
+            </section>
+            <hr class="m-0" />
+            <!-- Education-->
+            <section class="resume-section" id="education">
+                <div class="resume-section-content">
+                    <h2 class="mb-5">Education</h2>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">Northern Virginia Community College</h3>
+                            <div class="subheading mb-3">Associate</div>
+                            <div>Business Administration</div>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">June 2013</span></div>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">George Mason University</h3>
+                            <div class="subheading mb-3">Bachelors of Science</div>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">In Progress</span></div>
+                    </div>
+                </div>
+            </section>
+            <hr class="m-0" />
+            <!-- Skills-->
+            <section class="resume-section" id="skills">
+                <div class="resume-section-content">
+                    <h2 class="mb-5">Skills</h2>
+                    <div class="subheading mb-3">Programming Languages & Tools</div>
+                    <ul class="list-inline dev-icons">
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+          
+                        <li class="list-inline-item"><i class="devicon-amazonwebservices-plain-wordmark"></i></li>
+                        <li class="list-inline-item"><i class="devicon-python-plain"></i></li>
+                        <li class="list-inline-item"><i class="fab fa-wordpress"></i></li>
+                        <li class="list-inline-item"><i class="devicon-bash-plain"></i></li>
+                        <li class="list-inline-item"><i class="devicon-github-original"></i></li>
+                        <li class="list-inline-item"><i class="devicon-terraform-plain-wordmark"></i></li>              
+                    </ul>
+                </div>
+            </section>
+            <hr class="m-0" />
+            <!-- Interests-->
+            <section class="resume-section" id="interests">
+                <div class="resume-section-content">
+                    <h2 class="mb-5">Interests</h2>
+                    <p>Apart from being a Cloud Engineer, I enjoy playing golf, guitar, basketball, and soccer.</p>
+                    <p class="mb-0">I also game on PC when the time permits. </p>
+                </div>
+            </section>
+            <hr class="m-0" />
+            <!-- Awards-->
+            <section class="resume-section" id="awards">
+                <div class="resume-section-content">
+                    <h2 class="mb-5">Awards & Certifications</h2>
+                    <ul class="fa-ul mb-0">
+                        <li>
+                            <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
+                            AWS All Builders Welcome Grant recipient to re:Invent 2022
+                        </li>
+                        <li>
+                            <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
+                            AWS Solutions Architect Associate
+                        </li>
+                        <li>
+                            <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
+                            CompTIA Cyber Security Analyst+
+                        </li>
+                        <li>
+                            <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
+                            CompTIA Security+
+                        </li>
+                        <li>
+                            <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
+                            CompTIA Network+
+                        </li>
+                        <li>
+                            <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
+                            CompTIA A+
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
