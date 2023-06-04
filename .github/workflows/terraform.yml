@@ -75,7 +75,7 @@ jobs:
         cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
     # Change to the "BackEnd" directory
     - name: Change to BackEnd directory
-      run: cd BackEnd
+      run: ls
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform Init
       run: terraform init
