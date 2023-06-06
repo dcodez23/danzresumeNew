@@ -12,3 +12,14 @@ provider "aws" {
   region  = "us-east-1"
   profile = "prod"
 }
+
+/*terraform {
+  cloud {
+    organization = "CloudResumeDZ"
+
+    workspaces {
+      name = "CloudResumeBackend"
+    }
+  }
+}
+*/

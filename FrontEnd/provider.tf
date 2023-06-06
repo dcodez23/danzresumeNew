@@ -12,13 +12,14 @@ provider "aws" {
   region  = "us-east-1"
   profile = "prod"
 }
-/*
-#sample instance creation using t2.micro 
-resource "aws_instance" "example" {
-  ami           = "ami-0889a44b331db0194"
-  instance_type = "t2.micro"
-  tags = {
-    Name = "example-instance"
+
+/*terraform {
+  cloud {
+    organization = "CloudResumeDZ"
+
+    workspaces {
+      name = "CloudResumeFrontEnd"
+    }
   }
 }
 */
