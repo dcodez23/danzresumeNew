@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - master
-
+#Jobs that will be run
 jobs:
   terraform:
     name: "Terraform"
