@@ -10,10 +10,10 @@ terraform {
 # Configure the AWS Provider
 provider "aws" {
   region  = "us-east-1"
-  #profile = "prod"
+  
 }
 
-/*terraform {
+terraform {
   cloud {
     organization = "CloudResumeDZ"
 
@@ -22,4 +22,3 @@ provider "aws" {
     }
   }
 }
-*/
