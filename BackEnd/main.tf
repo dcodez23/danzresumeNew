@@ -14,7 +14,7 @@ provider "aws" {
 }
 
 terraform {
-  cloud {
+  backend "remote" {
     organization = "CloudResumeDZ"
 
     workspaces {
