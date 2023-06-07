@@ -18,7 +18,7 @@ resource "aws_s3_bucket_website_configuration" "example" {
   }
 }
 
-/*
+
 resource "aws_s3_bucket_object" "object" {
   bucket   = aws_s3_bucket.bucketSiteName.id
   for_each = fileset("./WebSiteFiles/", "**")
@@ -30,7 +30,7 @@ resource "aws_s3_bucket_object" "object" {
   etag = filemd5("./WebSiteFiles/${each.value}")
   
 }
-*/
+
 
 variable "content_types" {
   type = map(string)
