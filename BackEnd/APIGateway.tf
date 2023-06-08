@@ -51,9 +51,7 @@ resource "aws_api_gateway_integration_response" "corsResponse" {
   }
 
   response_parameters = {
-    "method.response.header.Access-Control-Allow-Headers" = "'Content-Type,X-Amz-Date,Authorization,X-Api-Key'"
-    "method.response.header.Access-Control-Allow-Methods" = "'POST,OPTIONS'"
-    "method.response.header.Access-Control-Allow-Origin"  = "'*'"
+    "method.response.header.Access-Control-Allow-Origin" = "'*'"
   }
   depends_on = [
     aws_api_gateway_integration.postIntegra
