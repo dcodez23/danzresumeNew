@@ -27,11 +27,9 @@ resource "aws_api_gateway_method_response" "corsMethodResponse" {
   rest_api_id = aws_api_gateway_rest_api.counter.id
 
   response_parameters = {
-    "method.response.header.Access-Control-Allow-Headers" = true
-    "method.response.header.Access-Control-Allow-Methods" = true
-    "method.response.header.Access-Control-Allow-Origin"  = true
+    "method.response.header.Access-Control-Allow-Origin" = true
   }
-
+  depends_on  = [aws_api_gateway_method.PostCount]
   status_code = "200"
 }
 
@@ -57,8 +55,10 @@ resource "aws_api_gateway_integration_response" "corsResponse" {
     "method.response.header.Access-Control-Allow-Methods" = "'POST,OPTIONS'"
     "method.response.header.Access-Control-Allow-Origin"  = "'*'"
   }
-
-  status_code = "200"
+  depends_on = [
+    aws_api_gateway_integration.postIntegra
+  ]
+  status_code = aws_api_gateway_method_response.corsMethodResponse.status_code
 }
 resource "aws_api_gateway_deployment" "deployAPI" {
   rest_api_id = aws_api_gateway_rest_api.counter.id
