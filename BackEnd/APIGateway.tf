@@ -94,3 +94,58 @@ resource "aws_lambda_permission" "apigwCounter" {
   source_arn    = "${aws_api_gateway_rest_api.counter.execution_arn}/*"
 }
 
+resource "aws_api_gateway_method" "optionsMethod" {
+  rest_api_id   = aws_api_gateway_rest_api.counter.id
+  resource_id   = aws_api_gateway_resource.lambdaCount.id
+  http_method   = "OPTIONS"
+  authorization = "NONE"
+}
+
+# OPTIONS method response.
+resource "aws_api_gateway_method_response" "options200" {
+  rest_api_id = aws_api_gateway_rest_api.counter.id
+  resource_id = aws_api_gateway_resource.lambdaCount.id
+  http_method = aws_api_gateway_method.optionsMethod.http_method
+  status_code = 200
+  response_parameters = {
+    "method.response.header.Access-Control-Allow-Origin"  = true,
+    "method.response.header.Access-Control-Allow-Methods" = true,
+    "method.response.header.Access-Control-Allow-Headers" = true
+  }
+  response_models = {
+    "application/json" = "Empty"
+  }
+
+  depends_on = [aws_api_gateway_method.optionsMethod]
+}
+
+# OPTIONS integration.
+resource "aws_api_gateway_integration" "optionsIntegration" {
+  rest_api_id = aws_api_gateway_rest_api.counter.id
+  resource_id = aws_api_gateway_resource.lambdaCount.id
+  http_method = aws_api_gateway_method.optionsMethod.http_method
+  type        = "MOCK"
+  request_templates = {
+    "application/json" = jsonencode(
+      {
+        statusCode = 200
+
+        depends_on = [aws_api_gateway_method.optionsMethod]
+      }
+    )
+  }
+}
+
+# OPTIONS integration response.
+resource "aws_api_gateway_integration_response" "options_integration_response" {
+  rest_api_id = aws_api_gateway_rest_api.counter.id
+  resource_id = aws_api_gateway_resource.lambdaCount.id
+  http_method = aws_api_gateway_method.optionsMethod.http_method
+  status_code = aws_api_gateway_method_response.options200.status_code
+  response_parameters = {
+    "method.response.header.Access-Control-Allow-Headers" = "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'",
+    "method.response.header.Access-Control-Allow-Methods" = "'OPTIONS,POST'",
+    "method.response.header.Access-Control-Allow-Origin"  = "'*'"
+  }
+  depends_on = [aws_api_gateway_method_response.options200]
+}
