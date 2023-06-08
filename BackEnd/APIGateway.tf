@@ -87,3 +87,10 @@ resource "aws_api_gateway_stage" "stage" {
   stage_name    = "prod"
 }
 
+resource "aws_lambda_permission" "apigwCounter" {
+  action        = "lambda:InvokeFunction"
+  function_name = aws_lambda_function.myFunction.function_name
+  principal     = "apigateway.amazonaws.com"
+  source_arn    = "${aws_api_gateway_rest_api.counter.execution_arn}/*"
+}
+
