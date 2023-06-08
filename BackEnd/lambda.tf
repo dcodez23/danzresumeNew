@@ -35,7 +35,7 @@ resource "aws_iam_role" "iam_for_lambda" {
         {
           Effect   = "Allow"
           Action   = "dynamodb:UpdateItem"
-          Resource = "arn:aws:dynamodb:us-east-1:793989704743:table/siteCounter"
+          Resource = "${aws_dynamodb_table.siteCountTable.arn}"
         }
       ]
     })
