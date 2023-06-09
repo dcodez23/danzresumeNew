@@ -28,7 +28,7 @@ resource "aws_s3_bucket_object" "object" {
   for_each      = toset(local.website_files)
   key           = each.value
   source        = "./WebSiteFiles/${each.value}"
-  content_type  = coalesce(var.content_types[regex("\\.([^.]+)$", each.value)], var.default_content_type)
+  content_type  = coalesce(var.content_types[regex("\\.([^./]+)$", each.value)], var.default_content_type)
   etag          = filemd5("./WebSiteFiles/${each.value}")
 }
 
