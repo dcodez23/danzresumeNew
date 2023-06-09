@@ -19,16 +19,18 @@ resource "aws_s3_bucket_website_configuration" "example" {
 }
 
 
-resource "aws_s3_bucket_object" "object" {
-  bucket   = aws_s3_bucket.bucketSiteName.id
-  for_each = [for file in fileset("./WebSiteFiles/", "**") : file if file != "assets/.DS_Store"]
-  key      = each.value
-  source   = "./WebSiteFiles/${each.value}"
-  content_type= coalesce(var.content_types[regex("(\\.[^.]+)$", each.value)[0]], var.default_content_type)
+locals {
+  website_files = [for file in fileset("./WebSiteFiles/", "**") : file if file != "assets/.DS_Store"]
+}
 
-  etag = filemd5("./WebSiteFiles/${each.value}")
-  
-} 
+resource "aws_s3_bucket_object" "object" {
+  bucket        = aws_s3_bucket.bucketSiteName.id
+  for_each      = toset(local.website_files)
+  key           = each.value
+  source        = "./WebSiteFiles/${each.value}"
+  content_type  = coalesce(var.content_types[regex("(\\.[^.]+)$", each.value)[0]], var.default_content_type)
+  etag          = filemd5("./WebSiteFiles/${each.value}")
+}
 
 
 variable "content_types" {
