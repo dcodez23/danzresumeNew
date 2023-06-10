@@ -22,11 +22,11 @@ locals {
   website_files = fileset(path.module, "WebSiteFiles/**")
 
   content_type_map = {
-    "html" = "text/html",
-    "css"  = "text/css",
-    "js"   = "application/javascript",
-    "png"  = "image/png",
-    "jpg"  = "image/jpeg"
+    ".html" = "text/html",
+    ".css"  = "text/css",
+    ".js"   = "application/javascript",
+    ".png"  = "image/png",
+    ".jpg"  = "image/jpeg"
     # Add more mappings as needed
   }
 }
